@@ -1,13 +1,9 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/ollybritton/cal8/pkg/cal8"
-)
+import "github.com/ollybritton/cal8/cmd"
 
 func main() {
-	// cmd.Execute()
+	cmd.Execute()
 
 	// a := cal8.HorizontalAppend("hello\nhow\nare", "hi\nam\ngood", "   ")
 	// b := cal8.HorizontalAppend("what\nis\nup\ndude", "I\nhave\ncrippling\ndepression", "   ")
@@ -17,13 +13,13 @@ func main() {
 	// fmt.Println(b)
 	// fmt.Println("")
 	// fmt.Println(cal8.HorizontalAppend(a, b, "   "))
-	cal := cal8.NewCalendar(cal8.Days, 2020, 7, 6)
-	for i := 1; i <= 12; i++ {
-		a := cal.StringMonth(2020, i)
-		b := cal8.GetNormalDay.StringMonth(2020, i)
-		fmt.Println(cal8.HorizontalAppend(a, b, "   "))
-		fmt.Print("\n\n")
-	}
+	// cal := cal8.NewCalendar(cal8.Days, 2020, 7, 6)
+	// for i := 1; i <= 12; i++ {
+	// 	a := cal.StringMonth(2020, i)
+	// 	b := cal8.GetNormalDay.StringMonth(2020, i)
+	// 	fmt.Println(cal8.HorizontalAppend(a, b, "   "))
+	// 	fmt.Print("\n\n")
+	// }
 
 	// fmt.Println(cal8.GetDay.Query(2020, 2, 1))
 
