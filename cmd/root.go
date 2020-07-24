@@ -45,6 +45,7 @@ to Friday, plus an extra "Valday".`,
 
 			if err != nil {
 				fmt.Println("error parsing date specified:", err)
+				os.Exit(1)
 			}
 		}
 
@@ -72,7 +73,7 @@ func init() {
 // getCal parses cmd's flags to return a cal8.Calendar struct. If it encounters an error, it will exit instead of
 // returning it.
 func getCal(cmd *cobra.Command) cal8.Calendar {
-	startDateRaw, err := cmd.PersistentFlags().GetString("start-date")
+	startDateRaw, err := cmd.Flags().GetString("start-date")
 	if err != nil {
 		fmt.Println("error parsing start date flag:", err)
 		os.Exit(1)
@@ -84,7 +85,7 @@ func getCal(cmd *cobra.Command) cal8.Calendar {
 		os.Exit(1)
 	}
 
-	days, err := cmd.PersistentFlags().GetStringArray("days")
+	days, err := cmd.Flags().GetStringArray("days")
 	if err != nil {
 		fmt.Println("error parsing days flag:", err)
 		os.Exit(1)

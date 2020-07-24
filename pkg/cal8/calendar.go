@@ -5,6 +5,8 @@ package cal8
 
 import (
 	"math"
+	"strings"
+	"time"
 )
 
 // Calendar represents... a calendar. It's modeled as a function which, when given a year, month and day will return the day name.
@@ -49,4 +51,21 @@ func NewCalendar(days []string, year, month, day int) Calendar {
 		},
 		Days: days,
 	}
+}
+
+// Format parses a Go time format string and returns a result suited to the modified calendar.
+// It is identical to time.Time.Format
+func (c *Calendar) Format(t time.Time, str string) string {
+	res := t.Format(str)
+	day := c.Query(t.Year(), int(t.Month()), t.Day())
+
+	for _, dayName := range NormalDays {
+		res = strings.ReplaceAll(res, dayName, day)
+		res = strings.ReplaceAll(res, dayName[:3], day[:3])
+	}
+
+	res = strings.ReplaceAll(res, "%a", t.Weekday().String()[:3])
+	res = strings.ReplaceAll(res, "%A", t.Weekday().String())
+
+	return res
 }
