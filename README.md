@@ -11,7 +11,7 @@ Mo Tu We Th Fr Sa Su Va
 31
 ```
 
-Under the `cal8` system, weeks are 8 days long consisting of Monday-Sunday plus an extra "Valday". During lockdown, for me time has been meaningless since every day has been pretty much the same (I really don't get out much). I thought it would be cool to try out a different system of keeping time since it's a good opportunity to do so.
+Under the `cal8` system, weeks are 8 days long consisting of Monday-Sunday plus an extra "Valday". During lockdown, time became meaningless since every day was been pretty much the same. I thought it would be interesting to try out a different system of keeping time since it's a good opportunity to do so. The rest of the README was written during lockdown.
 
 For me, having an extra day gives two main benefits:
 
